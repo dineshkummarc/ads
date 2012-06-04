@@ -25,6 +25,6 @@ js:
     - pushdowns.js
     - wallpaper.js
 
-less_js: /common/js/less-1.1.6.js
+less_js: /assets/js/less-1.1.6.js
 less:
     - main.less

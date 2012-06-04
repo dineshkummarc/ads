@@ -18,7 +18,7 @@ module Jekyll
         markup_prod Asset.relify("/assets/#{prod_name_with_ext}", context['page']['url'], false)
       else
         (assets_for_name.map do |asset|
-          markup "/common/#{@type}/#{asset}"
+          markup "/assets/#{@type}/#{asset}"
         end).join("\n")
       end
     end
