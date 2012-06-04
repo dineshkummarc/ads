@@ -1,0 +1,36 @@
+<project name="pushdown" default="compile">
+	<property file="build.properties" />
+	
+	<property name="testPath" value="../../test/pushdowns/"/>
+	
+	<macrodef name="compile">
+		<attribute name="debug" default="false" />
+		<attribute name="outputPrefix" default="./" />
+		
+		<sequential>
+			<echo message="Compiling..." />
+			<exec executable="${mxmlc_bin}" failonerror="true">
+				<arg line="src/com/iheart/pushdown/Pushdown.as" />
+				<arg line="-output @{outputPrefix}${swf}"/>
+				<arg line="-target-player '10.1.0'"/>
+				<arg line="-optimize=true" />
+				<arg line="-debug=@{debug}"/>
+				<arg line="-define+=CONFIG::DEBUG,@{debug}"/>
+				<arg line="-static-link-runtime-shared-libraries=true"/>
+				<arg line="-source-path=src/" />
+			</exec>
+		</sequential>
+	</macrodef>
+	
+	<target name="compile">
+		<compile />
+	</target>
+	
+	<target name="debug">
+		<compile debug="true" outputPrefix="${testPath}" />
+	</target>
+	
+	<target name="clean">
+		<delete file="${swf}" />
+	</target>
+</project>

@@ -1,0 +1,5 @@
+*.swf
+/*.sublime*
+/sales.iheart.com/_site/
+
+!pushdown/test/pushdown.swf

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+	<title>Flash Pushdown Test</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="../common/jquery.swfobject.1-1-1.js"></script>
+	<link rel="stylesheet" href="../common/main.css" media="screen" />
+
+	
+	<script>
+		var PUSHDOWN_SWF = 'test.swf',
+			ORD = 1,
+			swfReady = $.Deferred();
+		
+		window.swf = {
+			ready: function() {
+				swfReady.resolve();
+			},
+			loaded: function(ord) {
+				console.log('Ad loaded: ' + ord);
+			},
+			error: function(ord) {
+				console.error('Ad error: ' + ord);
+			},
+			open: function(ord, duration) {
+				$("#pushdown").stop().animate({
+					height: '415px'
+				}, duration || 500);
+			},
+			close: function(ord, duration) {
+				$("#pushdown").stop().animate({
+					height: '90px'
+				}, duration || 500);
+			},
+			
+			mouseover: function() {
+				console.log('over');
+			},
+			
+			mouseout: function() {
+				console.log('out');
+			}
+		};
+		
+		function load(url) {
+			swfReady.done(function() {
+				$pushdown.flash(function() {
+					this.load(ORD++, url, 'clickthrough.html', false);
+				});
+			});
+		}
+		
+		$(function() {
+			window.$pushdown = $('#pushdown');
+			
+			$pushdown.flash({
+				allowScriptAccess: 'always',
+				height: '100%',
+				swf: 'pushdown.swf',
+				width: '100%',
+				wmode: 'transparent'
+			});
+			
+			load(PUSHDOWN_SWF);
+		});
+	</script>
+	
+	<style>
+		#pushdown {
+			width: 970px;
+			height: 90px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="pushdown"></div>
+	</div>
+</body>

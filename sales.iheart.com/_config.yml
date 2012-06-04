@@ -1,0 +1,30 @@
+safe:        false
+auto:        true
+server:      false
+server_port: 4000
+base-url:    /
+
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+
+future:      true
+lsi:         false
+pygments:    true
+markdown:    rdiscount
+
+exclude:
+    - Makefile
+    - _lib
+
+title: iHeart.com Sales
+
+js:
+    - jquery.swfobject.1-1-1.js
+    - main.js
+    - pushdowns.js
+    - wallpaper.js
+
+less_js: /common/js/less-1.1.6.js
+less:
+    - main.less
