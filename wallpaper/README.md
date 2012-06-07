@@ -14,3 +14,5 @@ In the [templates](wallpapers/templates) directory, you will find three template
 * The top player is not included in the template: the top of your ad will always display immediately below the player.
 * To maximize image compression, leave a single, solid color in place of the black content area.  This will never be displayed.
 	* If you are going to include a 300x250/600 ad with the wallpaper, and the wallpaper has background-attachment:fixed and no-repeat, then include the relevant sidebar ad area in the solid color area.
+* Most users have display resolutions between 1280x800 and 1366x768, so the most important area of the wallpaper should be here.
+	* You are free to go larger than 1920x842, but it's better to design the wallpaper to fade into a solid color that is then set as the background color.
