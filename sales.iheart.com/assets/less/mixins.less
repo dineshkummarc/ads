@@ -3,3 +3,46 @@
 	-moz-box-shadow: @arguments;
 	-webkit-box-shadow: @arguments;
 }
+
+.border-radius() {
+    -webkit-border-radius: @arguments;
+    -moz-border-radius: @arguments;
+    border-radius: @arguments;
+
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.transition(@transition: all linear .1s) {
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+    transition: @transition;
+}
+
+//https://developer.mozilla.org/en/CSS/linear-gradient#Cross-browser_gradients
+.linear-gradient(@start, @stop, @color: NULL) {
+    background-color: ifnull(@color, @start);
+
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@start), to(@stop));
+    background-image: -webkit-linear-gradient(top, @start, @stop);
+    background-image: -moz-linear-gradient(top, @start, @stop);
+    background-image: -ms-linear-gradient(top, @start, @stop);
+    background-image: -o-linear-gradient(top, @start, @stop);
+
+//current standard, but unimplemented and subject to change
+    background-image: linear-gradient(to bottom, @start, @stop);
+
+/* Screws up text aliasing in IE
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@start, endColorstr=@stop);
+    */
+}
+
+
+@ltGrey: #dedede;
+@grey: #656565;
+@dkGrey: #3c3c3c;
+@blue: #00acf2;
+@dkBlue: #0088be;
+@red: #ae001c;
+@dkRed: #830909;

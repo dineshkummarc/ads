@@ -1,46 +1,393 @@
+/*************************************
+ * $Nav
+*************************************/
+html, body { height:100% !important;min-height:100%; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-weight:normal;
+    vertical-align: baseline;
+}
+
+/* html5 display rule */
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+    display:block;
+}
+
+
+
+/*************************************
+ * $Main
+*************************************/
 body {
+    color: @grey;
+    font:13px/21px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
 	background: #ececec url(../../assets/ads/wallpaper.png);
 	bottom: 0;
-	color: #3C3C3C;
-	font: 12px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    min-width: 400px;
 	height: 100%;
-	left: 0;
 	margin: 0 auto;
-	min-width: 400px;
+    padding:0;
 	position: absolute;
+    left: 0;
 	right: 0;
-	text-align: center;
 	top: 0;
 }
 
-.playerWrap {
-	background: url(../../assets/img/player.png);
-	height: 121px;
-	position: fixed;
-	width: 100%;
+a {
+    color:@blue;
+    font-weight:bold;
+    text-decoration:none;
+
+    &:hover { color:@dkBlue; }
 }
 
+
+ul, li {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}
+
+
+h1 {
+    color:@dkGrey;
+    font:26px/26px 'ScoutLight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin:0 0 5px 0;
+
+    a {
+        font:bold 14px/29px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        float:right;
+    }
+
+}
+
+
+nav {
+    background: url(/assets/img/nav_bg.png) top repeat-x;
+    width:100%;
+    height:109px;
+    position:fixed;
+
+    ul {
+        width:990px;
+        margin:0 auto;
+
+        li {
+            height:40px;
+            display:inline;
+            float:left;
+            border-left:1px solid #a22828;
+
+            &.logo {
+                width:97px;
+                height:111px;
+                margin:0 -3px 0 -2px;
+                border:0;
+
+                a {
+
+                    h1 {
+                        text-indent: -9999px;
+                        background: url(/assets/img/logo_ihr.png) no-repeat;
+                        width:96px;
+                        height:109px;
+                    }
+
+                    height:96px;
+                    padding:0;
+                    border:0;
+
+                    &:hover { background:transparent; }
+                }
+            }
+
+            a {
+                font:bold 13px/40px "Helvetica Neue", Helvetica, Arial, sans-serif;
+                color:#fff;
+                text-decoration: none;
+                text-transform: uppercase;
+                height:40px;
+                padding:0 20px;
+                display:block;
+                border-right:1px solid #850d0e;
+
+                &:hover,
+                &.on {
+                    color:@dkRed;
+                    background:#fff;
+                }
+            }
+
+        }
+    }
+}
+
+footer {
+    font: normal 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width:990px;
+    margin: 20px auto;
+    padding-top: 20px;
+    clear:both;
+    border-top: 1px solid @ltGrey;
+
+    li {
+        margin-right: 10px;
+        float:left;
+
+        a {
+            color:@grey;
+            font-weight: normal;
+        }
+    }
+
+    .copyright {
+        color:#a6a6a6;
+        float:right;
+    }
+
+}
+
+
+
 .content {
-	height: 100%;
-	margin: 0px auto;
-	padding-top: 117px;
-	width: 990px;
-		
-	.left {
-		background: #fff;
-		float: left;
-		.box-shadow(0 2px 5px rgba(0,0,0,.25));
-		width: 630px;
-		min-height: 650px;
-		padding: 18px 20px 25px;
-		margin-right: 20px;
-	}
-	
-	.right {
-		width: 300px;
-		height: 100%;
-		float: left;
-		right: 0;
-		padding: 20px 0;
-	}
+    background: #fff;
+    text-align: left;
+    width: 990px;
+    margin: -165px auto 0;
+    .box-shadow(0 2px 5px rgba(0,0,0,.25));
+
+    .pad { padding: 20px;}
+
+    header {
+        margin-bottom:25px;
+
+        h1 {
+            color:@red;
+            font-size: 30px;
+            text-transform: uppercase;
+            margin-bottom:10px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid @ltGrey;
+        }
+
+        p {
+            font:24px/30px ScoutLight, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+    }
+
+    section {
+        margin-bottom:25px;
+
+        .thumb {
+            width:235px;
+            height:165px;
+            margin-right:25px;
+            float:left;
+            border:1px solid @ltGrey;
+        }
+
+        .desc {
+            width:610px;
+            float:left;
+
+            p { margin-bottom: 5px; }
+        }
+    }
+
+
+
+
+}
+
+.wrap {
+    background: #eeeeee  url(/assets/img/hero_bg.png) 0 -230px repeat-x;
+    width:100%;
+    margin:0 auto;
+
+    .hero {
+        background: url(/assets/img/hero.jpg) 0 -30px no-repeat;
+        width: 990px;
+        height:276px;
+        margin:40px auto 0;
+    }
+}
+
+.wrapWide {
+    background: #eeeeee  url(/assets/img/hero_bg.png) top repeat-x;
+    width:100%;
+    height:100%;
+    margin:0 auto;
+
+    .hero {
+        background: #000 url(/assets/img/hero.jpg) top no-repeat;
+        width: 990px;
+        height:506px;
+        margin:40px auto 0;
+
+        header {
+            background: url(/assets/img/hero_hd.png) top no-repeat;
+            width:990px;
+            height:166px;
+            margin-top:225px;
+            float:left;
+
+            a {
+                width:205px;
+                height:45px;
+                margin: 102px 0 0 23px;
+                float:left;
+                display:block;
+            }
+        }
+    }
+
+    .content {
+        background: transparent;
+        width: 990px;
+        height: 100%;
+        margin: -95px auto 0;
+        padding:0;
+        .box-shadow(none);
+
+        .module {
+            background: #f1efef;
+            text-align: left;
+            width: 425px;
+            height:205px;
+            padding:20px;
+            float:left;
+            .box-shadow(0 3px 8px rgba(0,0,0,0.15));
+
+            &.right {
+                margin-left: 60px;
+            }
+
+            h1 { margin:0 0 15px 0; }
+
+            p {
+                color:@grey;
+                font-size: 14px;
+                line-height:21px;
+                margin-bottom:30px;
+            }
+
+            .carrot li {
+                width:30%;
+                float:left;
+            }
+        }
+    }
+
+}
+
+.carrot {
+    list-style-type:none;
+
+    li {
+        font: 14px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+        text-shadow: 1px 1px 2px #fff;
+        background: url(/assets/img/carrot_list.png) 0 9px no-repeat;
+        margin:0px;
+        padding-left: 10px;
+
+        a {
+            color:@red;
+            display:inline;
+
+            &:hover {
+                color:@dkRed;
+            }
+        }
+    }
+}
+
+
+/*************************************
+ * $Fonts
+*************************************/
+
+@font-face {
+    font-family: 'ScoutBold';
+    src: url('/assets/type/scout-bold-webfont.eot');
+    src: url('/assets/type/scout-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/type/scout-bold-webfont.woff') format('woff'),
+    url('/assets/type/scout-bold-webfont.ttf') format('truetype'),
+    url('/assets/type/scout-bold-webfont.svg#ScoutBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ScoutRegular';
+    src: url('/assets/type/scout-regular-webfont.eot');
+    src: url('/assets/type/scout-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/type/scout-regular-webfont.woff') format('woff'),
+    url('/assets/type/scout-regular-webfont.ttf') format('truetype'),
+    url('/assets/type/scout-regular-webfont.svg#ScoutRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ScoutLight';
+    src: url('/assets/type/scout-light-webfont.eot');
+    src: url('/assets/type/scout-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/type/scout-light-webfont.woff') format('woff'),
+    url('/assets/type/scout-light-webfont.ttf') format('truetype'),
+    url('/assets/type/scout-light-webfont.svg#ScoutLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ScoutCondRegular';
+    src: url('/assets/type/scoutcond-regular-webfont.eot');
+    src: url('/assets/type/scoutcond-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/type/scoutcond-regular-webfont.woff') format('woff'),
+    url('/assets/type/scoutcond-regular-webfont.ttf') format('truetype'),
+    url('/assets/type/scoutcond-regular-webfont.svg#ScoutRegularItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ScoutExtraLight';
+    src: url('/assets/type/scout-extralight-webfont.eot');
+    src: url('/assets/type/scout-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/type/scout-extralight-webfont.woff') format('woff'),
+    url('/assets/type/scout-extralight-webfont.ttf') format('truetype'),
+    url('/assets/type/scout-extralight-webfont.svg#ScoutExtraLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.clear { clear: both !important; }
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
