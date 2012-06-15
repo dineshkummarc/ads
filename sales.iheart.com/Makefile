@@ -13,7 +13,7 @@ production: clean
 	rm -rf _site/assets/js
 	rm -rf _site/assets/less
 	
-	rsync -avr _site/ sshacs@salesiheart.upload.akamai.com:/169939/
+	rsync -avr --delete _site/ sshacs@salesiheart.upload.akamai.com:/169939/
 
 clean:
 	rm -rf _site/
