@@ -1,48 +1,14 @@
 <!DOCTYPE html>
 <head>
-    <title>{{ site.title }}</title>
-    <meta charset="utf-8">
-    {% include_less %}
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    {% include_js %}
-    {% if site.auto %}
-    <script src="{{ site.less_js }}"></script>
-    {% endif %}
-    <!--[if lt IE 9]>
-    <script src="/assets/js/html5shiv.js"></script>
-    <![endif]-->
+	{% include head.html %}
 </head>
 
 <body>
-
-<nav>
-    <ul>
-        <li class="logo"><a href="/"><h1>iHeartRadio</h1></a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="showcase.html">Showcase</a></li>
-        <li><a href="adsolutions.html">Ad Solutions</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+{% include nav.html %}
 
 <div class="wrapWide">
-    {{ content }}
+	{{ content }}
 </div>
 
-<footer class="clearfix">
-    <ul class="copyright">
-        <li>iHeartRadio &copy; 2012</li>
-        <li>|</li>
-        <li>32 Avenue of the Americas, Mew York, NY</li>
-    </ul>
-    <ul class="ftrNav">
-        <li><a href="terms.html">Terms &amp; Conditions</a></li>
-        <li>|</li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li>|</li>
-        <li><a href="preferences.html">Email Preferences</a></li>
-    </ul>
-</footer>
-
-
+{% include footer.html %}
 </body>

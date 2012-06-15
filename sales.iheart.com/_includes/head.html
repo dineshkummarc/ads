@@ -1,0 +1,14 @@
+<title>{{ site.title }}</title>
+<meta charset="utf-8">
+
+{% include_less %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+{% include_js %}
+
+{% if site.auto %}
+	<script src="{{ site.less_js }}"></script>
+{% endif %}
+
+<!--[if lt IE 9]>
+	<script src="/assets/html5shiv.js"></script>
+<![endif]-->
