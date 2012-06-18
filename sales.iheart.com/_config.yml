@@ -17,7 +17,7 @@ exclude:
     - Makefile
     - _lib
 
-title: iHeart.com Sales
+title: The iHeartRadio Network: Where Brands and Fans Unite
 
 js:
     - jquery.swfobject.1-1-1.js
